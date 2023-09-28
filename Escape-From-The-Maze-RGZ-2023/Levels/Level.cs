@@ -8,9 +8,9 @@ public enum Decision
 
 public enum Move
 {
-    Upward,
-    Downward,
-    None
+    Upward = +1,
+    Downward = -1,
+    None = 0
 }
 
 public abstract class Level
