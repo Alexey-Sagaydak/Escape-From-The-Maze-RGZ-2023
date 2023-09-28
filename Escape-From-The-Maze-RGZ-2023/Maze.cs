@@ -67,7 +67,8 @@ public class Maze
 					return GameResult.Player1;
 			}
 		}
-		return new();
+
+		throw new Exception("There must be at least one decision (agree / disagree) to start the game!");
 	}
 	
 	private void CheckProbabilities()

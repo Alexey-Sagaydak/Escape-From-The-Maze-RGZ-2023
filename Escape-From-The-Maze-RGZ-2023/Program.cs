@@ -2,6 +2,27 @@
 
 public static class Program
 {
+    public static void Main()
+    {
+        Run(1_000_000);
+    }
+
+    public static Maze CreateMaze()
+    {
+        Maze maze = new Maze(
+                new int[] { +5, -6, +2, -4, +4, -1, +1, -2 },
+                0.5, 0.3, 0.2,
+                0,
+                new LevelCenter(),
+                new LevelMiddle(true),
+                new LevelMiddle(false),
+                new LevelMiddle(false),
+                new LevelMiddle(false),
+                new LevelEdge()
+                );
+        return maze;
+    }
+
     public static void Run(int k)
     {
         int Player1Win = 0, Player2Win = 0;
@@ -21,27 +42,6 @@ public static class Program
         }
 
         DescribeTheResult(Player1Win, Player2Win, k);
-    }
-
-    public static void Main()
-    {
-        Run(100000);
-    }
-
-    private static Maze CreateMaze()
-    {
-        Maze maze = new Maze(
-                new int[] { +5, -6, +2, -4, +4, -1, +1, -2 },
-                0.5, 0.3, 0.2,
-                0,
-                new LevelCenter(),
-                new LevelMiddle(true),
-                new LevelMiddle(false),
-                new LevelMiddle(false),
-                new LevelMiddle(false),
-                new LevelEdge()
-                );
-        return maze;
     }
 
     private static void DescribeTheResult(int player1Win, int player2Win, int numberOfGames)
